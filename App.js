@@ -1,31 +1,21 @@
 import React from 'react';
 import {
-  SafeAreaView,
   ScrollView,
-  StatusBar,
   StyleSheet,
   Text,
-  useColorScheme,
   View,
   FlatList,
   ActivityIndicator,
   Image,
 } from 'react-native';
-import {scale, ScaledSheet} from 'react-native-size-matters';
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import {scale} from 'react-native-size-matters';
+
 import {useEffect, useState} from 'react';
 import GetDimentionData from './get_dimension_data';
 
 const App: () => Node = () => {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
-  const [dimensionData, setDimensionData] = useState([]);
 
   const getAPIData = async () => {
     try {
@@ -33,17 +23,6 @@ const App: () => Node = () => {
       const json = await response.json();
 
       setData([...json.results]);
-
-      // let storeData = [];
-
-      // data.map(async item => {
-      //   let getDiemnsionData = await fetch(item.origin.url);
-      //   const result = await getDiemnsionData.json();
-      //   storeData.push(result);
-      // });
-      // console.log('reeee', storeData);
-
-      // setDimensionData([...storeData]);
     } catch (error) {
       console.error(error);
     } finally {

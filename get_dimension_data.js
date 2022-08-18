@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {Text, View, StyleSheet} from 'react-native';
-import {scale, ScaledSheet} from 'react-native-size-matters';
+import {scale} from 'react-native-size-matters';
 
 import {useState} from 'react';
 
